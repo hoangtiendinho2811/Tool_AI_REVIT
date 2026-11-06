@@ -16,6 +16,7 @@ param(
     [string]$RevitProcessName = 'Revit'
 )
 $ErrorActionPreference = 'Stop'
+try { [Console]::OutputEncoding = [Text.Encoding]::UTF8 } catch {}   # để tiếng Việt hiển thị đúng trong console
 if (-not $BuildDir) { $BuildDir = Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Path) '..\plugin\bin\AddIn 2024 Release R24' }
 
 if (Get-Process -Name $RevitProcessName -ErrorAction SilentlyContinue) {

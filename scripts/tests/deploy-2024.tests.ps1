@@ -1,6 +1,7 @@
 ﻿# Kiểm thử scripts/deploy-2024.ps1 trên thư mục giả (không đụng %AppData% thật).
 # Chạy: powershell -ExecutionPolicy Bypass -File scripts/tests/deploy-2024.tests.ps1
 $ErrorActionPreference = 'Stop'
+try { [Console]::OutputEncoding = [Text.Encoding]::UTF8 } catch {}
 $deploy = Join-Path $PSScriptRoot '..\deploy-2024.ps1'
 $failures = 0
 

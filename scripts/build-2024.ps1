@@ -5,6 +5,7 @@
   build không restore sẽ lỗi "ElementId does not contain a definition for 'Value'".
 #>
 $ErrorActionPreference = 'Stop'
+try { [Console]::OutputEncoding = [Text.Encoding]::UTF8 } catch {}   # để tiếng Việt hiển thị đúng trong console
 $repo = Resolve-Path (Join-Path $PSScriptRoot '..')
 $msbuild = 'C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe'
 if (-not (Test-Path $msbuild)) {
