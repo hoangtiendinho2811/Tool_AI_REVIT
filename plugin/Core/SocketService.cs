@@ -102,7 +102,8 @@ namespace revit_mcp_plugin.Core
             try
             {
                 _isRunning = true;
-                _listener = new TcpListener(IPAddress.Any, _port);
+                // Chỉ nhận kết nối từ chính máy này: IPAddress.Any cho phép máy khác trong LAN gửi lệnh (kể cả send_code_to_revit).
+                _listener = new TcpListener(IPAddress.Loopback, _port);
                 _listener.Start();
 
                 _listenerThread = new Thread(ListenForClients)
