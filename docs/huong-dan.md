@@ -50,7 +50,7 @@ chấp nhận khi Claude Code hỏi.
 | Hiện tượng | Nguyên nhân / cách xử lý |
 |---|---|
 | Claude báo không kết nối được Revit | Revit chưa mở, hoặc chưa bấm **Revit MCP Switch**. |
-| Claude báo không tìm thấy lệnh (command not found) | Lệnh chưa được bật: **Settings** → tick lệnh → **Save**. Lệnh mới thêm luôn phải bật một lần. |
+| Claude báo `Method not found: 'ten_lenh'` | Lệnh chưa được bật: **Settings** → tick lệnh → **Save**, rồi bấm **Revit MCP Switch** hai lần (tắt rồi bật lại) — lệnh chỉ được nạp lúc bật dịch vụ. Lệnh mới thêm luôn phải bật một lần. |
 | `deploy-2024.ps1` báo "Hãy đóng Revit trước khi triển khai." | Revit đang khoá DLL. Đóng Revit rồi chạy lại. |
 | `get_structural_summary` trả `"Chưa mở mô hình nào trong Revit"` | Mở một mô hình trước khi gọi. |
 | Cổng 8080 bị chiếm | Kiểm tra: `netstat -ano \| findstr :8080`. Đảm bảo bản MCP cũ đã nằm trong `_backup_mcp_cu`. |
@@ -71,7 +71,7 @@ Ví dụ có sẵn: `get_structural_summary`. Một lệnh cần **5 chỗ**, t�
    Server tự nạp mọi file trong `server/src/tools/`.
 
 Sau đó: `scripts\build-2024.ps1` → đóng Revit → `scripts\deploy-2024.ps1` → mở Revit →
-**Settings** → tick lệnh mới → **Save** → mở lại phiên Claude Code để nó thấy tool mới.
+**Settings** → tick lệnh mới → **Save** → bấm **Revit MCP Switch** (nếu dịch vụ đang bật thì tắt rồi bật lại) → mở lại phiên Claude Code để nó thấy tool mới.
 
 ## 6. Cảnh báo về `send_code_to_revit`
 
