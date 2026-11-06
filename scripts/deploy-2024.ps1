@@ -68,5 +68,5 @@ Get-ChildItem -LiteralPath $buildRoot -Recurse -File | ForEach-Object {
 }
 
 Write-Host ''
-Write-Host "Xong ($copied file). Mở Revit 2024 -> tab Revit MCP Plugin -> Settings -> bật lệnh -> Save, rồi bấm Revit MCP Switch."
+Write-Host "Xong ($copied file). Mở Revit 2024 -> tab Add-Ins -> panel Revit MCP Plugin -> Settings -> bật lệnh -> Save, rồi bấm Revit MCP Switch."
 exit 0
