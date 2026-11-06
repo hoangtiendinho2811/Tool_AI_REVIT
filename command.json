@@ -122,6 +122,11 @@
       "commandName": "create_dimensions",
       "description": "Create dimension annotations between elements or points in the current view",
       "assemblyPath": "RevitMCPCommandSet.dll"
+    },
+    {
+      "commandName": "get_structural_summary",
+      "description": "Thống kê cột, dầm, sàn, vách/tường, móng, cầu thang theo level và loại",
+      "assemblyPath": "RevitMCPCommandSet.dll"
     }
   ]
 }
